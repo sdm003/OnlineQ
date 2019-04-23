@@ -1,4 +1,6 @@
-package com.example.OnlineQueueSS.Models;
+package com.example.OnlineQueueSS.Model;
+
+import com.example.OnlineQueueSS.Entity.Fillial;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,7 +13,7 @@ public class Section {
     Long id;
     @NotNull
     String name;
-    @ManyToOne
+    @ManyToMany
     @JoinColumn(name="fillial_id")
     Fillial fillial;
 

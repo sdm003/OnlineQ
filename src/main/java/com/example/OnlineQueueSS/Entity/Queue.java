@@ -1,6 +1,9 @@
-package com.example.OnlineQueueSS.Models;
+package com.example.OnlineQueueSS.Entity;
+
+import com.example.OnlineQueueSS.Model.Section;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="queue")
@@ -14,8 +17,23 @@ public class Queue {
    private Fillial fillial;
 
 @ManyToOne
+@JoinColumn(name="section_id")
+private Section section;
+
+@ManyToOne
     @JoinColumn(name="user_id")
 private  User user;
+private String isUsed;
+private LocalDateTime whenTaked;
+private  LocalDateTime whenUsed;
+
+    public Queue(Fillial fillial, Section section, User user) {
+        this.fillial = fillial;
+        this.section = section;
+        this.user = user;
+        this.whenTaked = LocalDateTime.now();
+        this.isUsed="Waiting";
+    }
 
     public Queue(Fillial fillial, User user) {
         this.fillial = fillial;

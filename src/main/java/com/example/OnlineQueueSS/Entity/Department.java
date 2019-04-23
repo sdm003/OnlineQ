@@ -1,4 +1,4 @@
-package com.example.OnlineQueueSS.Models;
+package com.example.OnlineQueueSS.Entity;
 //Category
 import javax.persistence.*;
 @Entity

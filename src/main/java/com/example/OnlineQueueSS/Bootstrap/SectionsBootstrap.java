@@ -1,9 +1,9 @@
 package com.example.OnlineQueueSS.Bootstrap;
 
-import com.example.OnlineQueueSS.Models.Category;
-import com.example.OnlineQueueSS.Models.Department;
-import com.example.OnlineQueueSS.Models.Fillial;
-import com.example.OnlineQueueSS.Models.Section;
+import com.example.OnlineQueueSS.Entity.Category;
+import com.example.OnlineQueueSS.Entity.Department;
+import com.example.OnlineQueueSS.Entity.Fillial;
+import com.example.OnlineQueueSS.Model.Section;
 
 public class SectionsBootstrap {
     public static void main(String[] args) {

@@ -1,10 +1,8 @@
 package com.example.OnlineQueueSS.Services;
 
-import com.example.OnlineQueueSS.Models.Queue;
-import com.example.OnlineQueueSS.Models.User;
+import com.example.OnlineQueueSS.Entity.User;
 import com.example.OnlineQueueSS.Repo.UserRepo;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public class UserService {
