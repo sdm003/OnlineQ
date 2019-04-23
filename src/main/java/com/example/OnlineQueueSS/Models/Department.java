@@ -1,5 +1,5 @@
 package com.example.OnlineQueueSS.Models;
-
+//Category
 import javax.persistence.*;
 @Entity
 @Table(name="department")
