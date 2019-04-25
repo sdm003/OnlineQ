@@ -3,15 +3,19 @@ package com.example.OnlineQueueSS.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="category")
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String Name;
+    private String name;
 
     public Category(String name) {
-        Name = name;
+        this.name = name;
+    }
+
+    public Category() {
+
     }
 
     public Long getId() {
@@ -23,10 +27,10 @@ public class Category {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }
