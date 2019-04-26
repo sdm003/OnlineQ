@@ -1,25 +1,21 @@
 package com.example.OnlineQueueSS.Model;
 
-import com.example.OnlineQueueSS.Entity.Fillial;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="section")
+@Table(name = "section")
 public class Section {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    @NotNull
-    String name;
-    @ManyToMany
-    @JoinColumn(name="fillial_id")
-    Fillial fillial;
+    private Long id;
 
-    public Section(@NotNull String name, Fillial fillial) {
+    private String name;
+
+    public Section(String name) {
         this.name = name;
-        this.fillial = fillial;
+    }
+
+    public Section() {
     }
 
     public Long getId() {
@@ -36,13 +32,5 @@ public class Section {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Fillial getFillial() {
-        return fillial;
-    }
-
-    public void setFillial(Fillial fillial) {
-        this.fillial = fillial;
     }
 }
