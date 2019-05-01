@@ -4,31 +4,36 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user")
+@Table(name = "USER_PROJECT")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @NotNull
     private String name;
 
-    private String email;
-
-    private String phoneNumber;
+    @NotNull
+    @Column(unique = true)
+    private String login;
 
     @NotNull
     private String password;
 
-    @NotNull
-    private String login;
+    public User() {
+    }
 
-    public User(@NotNull String name, String email, String phoneNumber, @NotNull String password, @NotNull String login) {
+    public User(String name, String login, String password) {
         this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
         this.login = login;
+        this.password = password;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getName() {
@@ -39,20 +44,12 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -63,11 +60,15 @@ public class User {
         this.password = password;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
+    @Override
+    public boolean equals(Object obj) {
+        User user = (User)obj;
+        if(this.login.equals(user.login)) return true;
+        return false;
     }
 }
+
+
+
+
+

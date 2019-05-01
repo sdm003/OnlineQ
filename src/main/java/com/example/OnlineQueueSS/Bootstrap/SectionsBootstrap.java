@@ -11,9 +11,9 @@ public class SectionsBootstrap {
         Department department= new Department("DemiBank",category);
         Fillial fillial= new Fillial("HEAD","BishkekPark",department);
 
-        Section sectionOne= new Section("KASSA",fillial);
-        Section sectionTwo= new Section("FIZ",fillial);
-        Section sectionThree= new Section("YUR",fillial);
+//        Section sectionOne= new Section("KASSA",fillial);
+//        Section sectionTwo= new Section("FIZ",fillial);
+//        Section sectionThree= new Section("YUR",fillial);
 
     }
 }
